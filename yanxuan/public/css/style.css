@@ -1,0 +1,68 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
+#app{
+    width: 100%;
+    height: 100%;
+}
+.border-top, .border-bottom{
+    position: relative;
+}
+.border-top::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #d9d9d9;
+    transform: scaleY(0.5);
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.border-bottom::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #d9d9d9;
+    transform: scaleY(0.5);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.page{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 49px;
+    background: #fff;
+}
+.page.subpage{
+    bottom: 0;
+    z-index: 100;
+    background: #fff;
+}
+@keyframes slideInRight{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slideOutRight{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+.slideInRight{
+    animation: slideInRight 300ms;
+}
+.slideOutRight{
+    animation: slideOutRight 300ms;
+}
